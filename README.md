@@ -115,4 +115,6 @@ En Pahalı 5 Ürün:
 
 **Fatma Ayben Coşkun**  
 Çankırı Karatekin Üniversitesi – İstatistik (1. Sınıf)  
-GitHub: [@aybencoskun](https://github.com/aybencoskun)
+linkedIn: www.linkedin.com/in/ayben-coskun-95337b33b
+
+
