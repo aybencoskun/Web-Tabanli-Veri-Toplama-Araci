@@ -1,117 +1,66 @@
-#  Web Tabanlı Veri Toplama ve Fiyat Karşılaştırma Aracı
+This is a web-based tool developed with Python and Flask that allows users to collect data from a given URL using web scraping techniques. The tool takes user input via a simple interface and extracts relevant information from web pages using BeautifulSoup.
 
-##  Proje Amacı
+ Features
+User-friendly web interface for inputting URLs
 
-Bu projenin amacı, çevrimiçi alışveriş platformlarında aynı ürünün birden fazla satıcı tarafından sunulduğu durumları analiz ederek fiyat, satıcı bilgisi, kargo gibi kriterlere göre karşılaştırma yapabilen bir Python tabanlı araç geliştirmektir.
+Automatic data extraction from web pages
 
-Proje kapsamında web kazıma, veri temizleme, CSV ile veri kaydetme ve temel analiz işlemleri gerçekleştirilmiştir.
+Uses requests and BeautifulSoup for scraping
 
----
+Displays extracted content on the same page
 
-## Kullanılan Platformlar
+Can be customized for different scraping needs
+ Technologies Used
+Python
 
-- [Trendyol](https://www.trendyol.com)
-- [Hepsiburada](https://www.hepsiburada.com)
-- [N11](https://www.n11.com)
+Flask
 
----
+BeautifulSoup
 
-##  Kullanılan Teknolojiler ve Kütüphaneler
+Requests
 
-- Python 3.10
-- `requests` – HTTP istekleri gönderme
-- `BeautifulSoup` – HTML parse etme
-- `pandas` – Veri analizi ve CSV işlemleri
-- `re` – Regex ile metin işleme
-- `time` – Sayfa istekleri arası bekleme süresi
+HTML/CSS (Jinja2 templates)
 
->  **Neden BeautifulSoup?**  
-> Sayfa yapısını hızlı ve pratik bir şekilde ayrıştırması, selenium gibi ağır çözümlere ihtiyaç bırakmaması nedeniyle tercih edilmiştir.
+▶ How to Run
+Clone the repository
 
----
 
-##  Proje Dosya Yapısı
-Web-Tabanli-Veri-Toplama-Araci/
-│
-├── trendyol_scraper.py # Trendyol ürün verilerini çeker
-├── hepsiburada_scraper.py # Hepsiburada ürün verilerini çeker
-├── n11_scraper.py # N11 ürün verilerini çeker
-├── analyze_data.py # CSV verisini analiz eder
-├── output.csv # Tüm platformlardan toplanan ürün verileri
-└── README.md # Teknik rapor ve proje açıklaması
+git clone https://github.com/aybencoskun/Web-Tabanli-Veri-Toplama-Araci.git
+cd Web-Tabanli-Veri-Toplama-Araci
+Install dependencies
+Make sure you have Python installed. Then run:
 
----
 
-##  Proje Özeti
+pip install -r requirements.txt
+Run the app
 
-- Kullanıcıdan ürün linki alınır veya ürün adı girilir.
-- Seçilen web sitesi için scraper çalıştırılır.
-- Satıcılar listelenir, fiyat, puan, kargo bilgileri toplanır.
-- Veriler `output.csv` dosyasına kaydedilir.
-- `analyze_data.py` dosyası ile en ucuz ve en pahalı ürünler belirlenir.
 
----
+python app.py
+Open your browser and go to:
 
-##  Veri Analizi Örneği (`analyze_data.py`)
 
-`output.csv` dosyasındaki ürün verileri işlenir. Ardından:
+http://127.0.0.1:5000
+📂 Project Structure
+csharp
+Kopyala
+Düzenle
+├── app.py                  # Main Flask app
+├── templates/
+│   └── index.html          # HTML interface
+├── static/                 # (Optional) For styling
+└── requirements.txt        # Python dependencies
+📌 Use Cases
+Simple academic or research data gathering
 
-- En **ucuz 5 ürün**
-- En **pahalı 5 ürün**
+Web content monitoring
 
-fiyat sıralamasına göre yazdırılır.
+E-commerce product data collection
 
-### Örnek Çıktı:
+News or article extraction
 
-En Ucuz 5 Ürün:
 
-Ürün A - 189.99 TL
 
-Ürün B - 210.00 TL
-
-Ürün C - 239.00 TL
-...
-
-En Pahalı 5 Ürün:
-
-Ürün X - 9999.00 TL
-
-Ürün Y - 8599.00 TL
-
-Ürün Z - 7200.00 TL
-...
----
-
-##  Teslim Kriterlerine Uyum
-
-| Teslim Maddesi                                                    | Durum |
-|-------------------------------------------------------------------|-------|
-| Belirlenen sitelerden veri kazıma                                 | ✅     |
-| Ürün adı, fiyat, satıcı gibi temel bilgilerin çıkarılması         | ✅     |
-| Verilerin CSV formatında kaydedilmesi                             | ✅     |
-| En ucuz/en pahalı ürünleri gösteren analiz                        | ✅     |
-| Teknik açıklama ve proje dökümantasyonu                           | ✅     |
-
----
-
-##  Zorluklar ve Çözüm Önerileri
-
-- **JavaScript ile yüklenen içerikler:** Sayfalar dinamik olduğundan, doğrudan HTML yerine bazı durumlarda API uç noktaları veya JSON yanıtları analiz edilmiştir.
-- **Eksik veri sorunları:** Hataları önlemek için `try-except` blokları kullanılmıştır.
-- **Farklı sayfa yapıları:** Her site için özel scraper yazılmıştır.
-
----
-
-##  Gelecek Geliştirme Önerileri
-
-- Selenium veya Playwright gibi araçlarla JavaScript destekli sayfalara daha etkin erişim
-- Basit bir arayüz (GUI) ile kullanıcıdan ürün linki alma sürecini kolaylaştırma
-- Kargo süresi, yorum sayısı, ürün açıklamaları gibi ek alanların kazınması
-- Satıcı puanı ve yorum sayısına göre sıralama yapma
-
----
-
-##  Geliştirici
+## Founder
 
 **Fatma Ayben Coşkun**  
 Çankırı Karatekin Üniversitesi – İstatistik (1. Sınıf)  
